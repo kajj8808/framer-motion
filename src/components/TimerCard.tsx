@@ -4,7 +4,7 @@ import styled from "styled-components";
 const MinutesBox = styled(motion.div)`
   width: 180px;
   height: 280px;
-  background-color: #f1f1f1;
+  background-color: ${(props) => props.theme.textColor};
   border-radius: 12px;
   display: flex;
   justify-content: center;

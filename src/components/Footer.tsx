@@ -17,7 +17,7 @@ const FieldTitle = styled.h3`
   text-transform: uppercase;
   font-weight: 600;
   font-size: 18px;
-  color: #f1f1f1;
+  color: ${(props) => props.theme.textColor};
 `;
 const FieldText = styled.p`
   font-weight: 600;

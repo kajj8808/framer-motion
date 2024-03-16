@@ -12,7 +12,7 @@ const Container = styled.div`
   align-items: center;
 `;
 const Colon = styled.p`
-  color: #f1f1f1;
+  color: ${(props) => props.theme.textColor};
   font-size: 50px;
   font-weight: bold;
   padding: 0 10px;

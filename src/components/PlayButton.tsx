@@ -17,7 +17,7 @@ const Box = styled(motion.div)`
 const Svg = styled(motion.svg)`
   width: 50px;
   height: 50px;
-  fill: #f1f1f1;
+  fill: ${(props) => props.theme.textColor};
 `;
 
 function PlayButton() {
