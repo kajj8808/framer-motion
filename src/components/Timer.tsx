@@ -25,9 +25,8 @@ const Colon = styled.p`
 
 function Timer() {
   const [time, setTime] = useState(FIFTEEN_MINUTES);
-  const [hour, setHour] = useState(25);
+  const [minutes, setMinutes] = useState(25);
   const [second, setSecond] = useState(0);
-
   const [isWorking, setWorking] = useRecoilState(workingAtom);
   const [round, setRound] = useRecoilState(roundAtom);
   const [goal, setGoal] = useRecoilState(goalAtom);
@@ -44,17 +43,17 @@ function Timer() {
   useEffect(() => {
     if (isWorking) {
       // working...
-      setHour(Math.floor(time / 60));
+      setMinutes(Math.floor(time / 60));
       setSecond(Math.floor(time % 60));
     }
   }, [time, isWorking]);
 
   useEffect(() => {
-    if (hour === 0 && second === 0) {
+    if (minutes === 0 && second === 0) {
       // on step done!~
       setWorking(false);
       setTime(FIFTEEN_MINUTES);
-      setHour(25);
+      setMinutes(25);
 
       if (round < 4) {
         setRound((currentRound) => currentRound + 1);
@@ -67,7 +66,7 @@ function Timer() {
 
   return (
     <Container>
-      <TimerCard time={hour} />
+      <TimerCard time={minutes} />
       <Colon />
       <TimerCard time={second} />
     </Container>
